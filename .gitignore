@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Environments
+.venv/
+venv/
+.env
+.env.local
+
+# Data — keep fixtures and the small demo DB, ignore real data
+data/*
+!data/.gitkeep
+!data/jobpulse.duckdb
+
+# Model artefacts — ignore real/large ones, but COMMIT the small demo model
+# so the deployed dashboard has a model to load.
+artefacts/*
+*.joblib
+*.pkl
+!artefacts/salary_model.joblib
+!fixtures/*.joblib
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
