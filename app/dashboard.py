@@ -84,7 +84,9 @@ salary_range = st.sidebar.slider(
 mask = (
     df["region"].isin(selected_regions)
     & df["workplace_type"].isin(selected_workplace)
-    & df["salary_mid"].between(*salary_range, inclusive="both")
+    # keep salary-less postings: real Adzuna data is mostly missing salary,
+    # and the filter should not silently hide those jobs from every tab
+    & (df["salary_mid"].between(*salary_range, inclusive="both") | df["salary_mid"].isna())
 )
 fdf = df[mask].copy()
 
@@ -271,6 +273,6 @@ with tab_about:
         **Stack:** Python 3.12 · DuckDB · Adzuna · Anthropic · scikit-learn
         · XGBoost · Streamlit · Plotly · GitHub Actions.
 
-        **Code:** [github.com/abasukanga/jobpulse-uk](https://github.com/abasukanga/jobpulse-uk)
+        **Code:** [github.com/abasukanga4/jobpulse-uk](https://github.com/abasukanga4/jobpulse-uk)
         """
     )

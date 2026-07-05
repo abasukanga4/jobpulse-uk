@@ -21,7 +21,7 @@ license: mit
 ## Quickstart
 
 ```bash
-git clone https://github.com/abasukanga/jobpulse-uk
+git clone https://github.com/abasukanga4/jobpulse-uk
 cd jobpulse-uk
 uv sync --extra dev --extra ml --extra dashboard
 

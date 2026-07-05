@@ -42,7 +42,7 @@ class SkillExtractor(Protocol):
 _TECH = {
     r"\bpython\b": "python",
     r"\bsql\b": "sql",
-    r"\br\b": "r",
+    r"\br\b(?!&)": "r",  # (?!&) so "R&D" doesn't count as the R language
     r"\bscala\b": "scala",
     r"\bjava\b": "java",
     r"\bgolang\b|\bgo language\b": "go",
@@ -82,7 +82,8 @@ _DOMAINS = {
     r"\bmlops\b|model monitoring|drift detection": "mlops",
     r"\bcausal\b|\ba/b test\b|experimentation": "experimentation",
     r"\bnlp\b|natural language processing": "nlp",
-    r"\bcomputer vision\b|\bcv\b": "computer-vision",
+    # no bare \bcv\b: UK ads say "send your CV", which is not computer vision
+    r"\bcomputer vision\b|\bopencv\b": "computer-vision",
     r"\bforecast(ing)?\b|time[- ]series": "forecasting",
     r"\brecommend(er|ation)?\b": "recommenders",
     r"\bfraud\b|anti[- ]?money[- ]?laundering|\baml\b": "fraud",

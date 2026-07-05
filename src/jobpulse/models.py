@@ -72,13 +72,6 @@ class ExtractedSkills(BaseModel):
     extracted_at: datetime = Field(default_factory=datetime.utcnow)
 
 
-class JobWithSkills(BaseModel):
-    """Convenience wrapper for the joined view used by ML and the dashboard."""
-
-    job: Job
-    skills: ExtractedSkills
-
-
 class IngestStats(BaseModel):
     """Returned by every ingest run for observability."""
 

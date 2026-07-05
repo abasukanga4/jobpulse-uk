@@ -1,7 +1,7 @@
 [project]
 name = "jobpulse-uk"
 version = "0.1.0"
-description = "End-to-end pipeline tracking UK AI & data jobs. Ingests, extracts skills with an LLM, predicts salaries, surfaces emerging role clusters."
+description = "End-to-end pipeline tracking UK AI & data jobs. Ingests, extracts skills with an LLM, predicts salaries."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
@@ -68,9 +68,9 @@ dev = [
 jobpulse = "jobpulse.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/abasukanga/jobpulse-uk"
-Repository = "https://github.com/abasukanga/jobpulse-uk"
-Issues = "https://github.com/abasukanga/jobpulse-uk/issues"
+Homepage = "https://github.com/abasukanga4/jobpulse-uk"
+Repository = "https://github.com/abasukanga4/jobpulse-uk"
+Issues = "https://github.com/abasukanga4/jobpulse-uk/issues"
 
 [build-system]
 requires = ["hatchling"]

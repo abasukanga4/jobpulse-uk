@@ -171,14 +171,6 @@ class JobStore:
                 """
             ).df()
 
-    def export_parquet(self, out_dir: Path) -> Path:
-        """Snapshot the joined view to Parquet for portable analytics."""
-        out_dir.mkdir(parents=True, exist_ok=True)
-        path = out_dir / "jobs.parquet"
-        with self._connect() as con:
-            con.execute(f"COPY (SELECT * FROM jobs) TO '{path}' (FORMAT PARQUET)")
-        return path
-
     # ---- row conversion -------------------------------------------------
 
     @staticmethod
